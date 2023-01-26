@@ -1,0 +1,26 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+    <hr>
+    <h2>City details</h2>
+    {% for city in cities_list.cities %}
+        <div>
+            
+            <a href="{% url "myapp:city-detail" city.geonameid %}">
+                {{ city.name }}
+            </a>
+            <p>
+                Longitude: {{ city.longitude }}
+            </p>
+            <p>
+                Latitude: {{ city.latitude }}
+            </p>
+        </div>
+    {% endfor %}
+
+    <div class="nav">
+        <a href="{{ cities_list.links.first }}">Link</a>
+        <p></p>
+    </div>
+{% endblock content %}

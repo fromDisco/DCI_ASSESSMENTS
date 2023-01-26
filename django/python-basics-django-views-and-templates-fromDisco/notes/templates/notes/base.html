@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contentheader %}
+    <header>
+        <h1>My Notes</h1>
+    </header>
+{% endblock contentheader %}
+
+{% block contentmain %}
+    <h2>{{ response.title }}</h2>
+    {% include "navlist.html" %}
+    <a href="{% url response.backlink.link %}">{{ response.backlink.text }}</a>
+{% endblock contentmain %}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="mainheader">
+            <nav>
+                <a href="{% url "banking:send_money" %}">Make transaction</a>
+            </nav>
+        </header>
+        <main>
+        {% block contentheader %}
+            <h1>Make a Transaction</h1>
+            <p>1. Choose the Country from where you want to transfer</p>
+            <p>2. Choose the Country you want to transfert to.</p>
+        {% endblock contentheader %}
+        {% block contentmain %}{% endblock contentmain %}
+        </main>
+        <footer>
+            {% now "F j, Y" %}
+            <nav>
+                <a href="http://">Imprint</a>
+                <a href="http://">About</a>
+                <a href="http://">Contact</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

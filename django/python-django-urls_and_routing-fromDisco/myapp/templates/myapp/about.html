@@ -1,0 +1,10 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    {% for content in contents %}
+        <div class="content">
+            <h2>{{ content.title }}</h2>
+            <p>{{ content.text }}</p>
+        </div>
+    {% endfor%}
+{% endblock content %}

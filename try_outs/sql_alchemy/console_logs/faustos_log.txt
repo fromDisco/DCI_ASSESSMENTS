@@ -1,0 +1,56 @@
+FROM users
+127.0.0.1 - - [01/Dec/2022 22:19:23] "GET /list-users HTTP/1.1" 200 -
+^C^C
+❯ git add .
+❯ git add .
+❯ git commit -m "Add solution to Flask_intro SQLAlchemy"
+[main ab81975] Add solution to Flask_intro SQLAlchemy
+ 2 files changed, 35 insertions(+), 31 deletions(-)
+❯ git push
+❯ source venv/bin/activate
+❯ flask shell
+Python 3.11.0 (v3.11.0:deaf509e8f, Oct 24 2022, 14:43:23) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+App: app
+Instance: /Users/faustoferrara/Documents/CODE/DCI_FLASK_ASSIGNMENTS/flask-intro-dec-1-exercise-Capt-V570/instance
+>>> from app.models import User, Reminder
+>>> Reminder.query.all()
+FROM reminders
+[]
+>>> User.query.all()
+FROM users
+[<User 1>, <User 2>]
+>>> user_reminders = User.query.all()[1]
+FROM users
+>>> user_reminders
+<User 2>
+>>> user_reminders.reminders
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'User' object has no attribute 'reminders'
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> ^D
+now exiting InteractiveConsole...
+❯ flask shell
+Python 3.11.0 (v3.11.0:deaf509e8f, Oct 24 2022, 14:43:23) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+App: app
+Instance: /Users/faustoferrara/Documents/CODE/DCI_FLASK_ASSIGNMENTS/flask-intro-dec-1-exercise-Capt-V570/instance
+>>> from app.models import User, Reminder
+>>> new_user = User(username="Peer")
+>>> new_user.set_password_hash("Victor1sDr1v1ngUSm4d")
+>>> db.session.add(new_user)
+>>> db.session.commit()
+>>> new_reminder = Reminder(title="Ah..Python", description="ok.. don't use Flask", user_id=new_user.id)
+FROM users 
+WHERE users.id = %(pk_1)s
+>>> db.session.add(new_reminder)
+>>> db.session.commit()
+>>> dir(new_user)
+['__abstract__', '__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__fsa__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__mapper__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__table__', '__tablename__', '__weakref__', '_sa_class_manager', '_sa_instance_state', '_sa_registry', 'decrip_password', 'id', 'metadata', 'password_hashed', 'query', 'query_class', 'registry', 'reminders', 'set_password_hash', 'to_json', 'username']
+>>> new_user.reminders
+FROM users 
+WHERE users.id = %(pk_1)s
+FROM reminders 
+WHERE %(param_1)s = reminders.user_id
+[<Reminder 1>]
+>>> 

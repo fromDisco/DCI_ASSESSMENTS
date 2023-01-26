@@ -1,0 +1,28 @@
+.maincontent {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.content {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: rgb(203, 243, 255);
+}
+
+.footer {
+    margin-top: 5rem;
+}
+
+.footer h3 {
+    border-bottom: 1px solid black;
+}
+
+.weather {
+    background-color: antiquewhite;
+    margin: 1rem 0;
+    padding: 1rem;
+}

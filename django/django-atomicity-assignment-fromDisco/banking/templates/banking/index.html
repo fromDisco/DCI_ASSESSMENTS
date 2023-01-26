@@ -1,0 +1,12 @@
+<h1>All Customers</h1>
+
+{% for customer in customers %}
+    <div class="customer">
+        <p><b>Name: {{ customer.name }}</b></p>
+        <p><a href="{% url 'customer-details' customer.id %}">Go to details of Customer {{ customer.name }}</a></p>
+    </div> 
+{% endfor %}
+
+<div class="new-customer">
+    <a href="{% url 'new-customer' %}">Create a new customer</a>
+</div>

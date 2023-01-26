@@ -1,0 +1,11 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    {% for weather in weather_listing %}
+        <div class="weather">
+            <h3>{{ weather.location }}</h3>
+            <p>{{ weather.weather }}</p>
+            <p>{{ weather.date }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  python:
+    build: python
+    #restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=warehouse_db
+    #working_dir: /python
+    volumes:
+      - ./python:/app
+    depends_on:
+      - postgres
+    #networks:
+    #  - python_postgres
+
+  postgres:
+    build: database
+    ports:
+      - '5433:5432'
+    volumes:
+      - warehouse_db:/var/lib/postgresql
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=warehouse_db
+    #networks:
+    #  - python_postgres
+
+volumes:
+  warehouse_db:
+
+
+networks:
+  python_postgres:

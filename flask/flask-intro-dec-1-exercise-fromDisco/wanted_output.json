@@ -1,0 +1,18 @@
+{
+    "user": {
+        "id": 1,
+        "username": "Herr von Boedefeld",
+        "contributions": [
+            {
+                "id": 2,
+                "title": "Hey",
+                "description": "ho"
+            },
+            {
+                "id": 3,
+                "title": "Hallo",
+                "description": "du"
+            }
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+
+<div class="navlist">
+    <ol>
+    {% for el in response.nav.values %}
+        {% if el.args %}
+            <li><a href="{% url el.link el.args %}">{{ el.text }}</a></li>
+        {% else %}
+            <li><a href="{% url el.link %}">{{ el.text }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+</div>

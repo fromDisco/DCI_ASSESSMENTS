@@ -1,0 +1,11 @@
+{% extends "notes/base.html" %}
+
+{% block contentmain %}
+    <h2>{{ section.title }}</h2>
+    <ol>
+        {% for paragraph in section.paragraphs.texts %}
+        <li>{{ paragraph }}</li>
+        {% endfor %}
+    </ol>
+    <a href="{% url section.backlink.link %}">{{ section.backlink.text }}</a>
+{% endblock contentmain %}

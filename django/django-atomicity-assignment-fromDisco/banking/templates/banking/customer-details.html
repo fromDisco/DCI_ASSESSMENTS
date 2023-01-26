@@ -1,0 +1,13 @@
+<h1>Details page of {{ customer.name }}</h1>
+
+<div class="customer">
+    <p><b>Name:</b> {{ customer.name }}</p>
+    <p><b>Amount:</b> {{ customer.amount }}</p>
+    <p><b>Joining Date:</b> {{ customer.joining_date }}</p>
+
+    <p><a href="{% url 'transfer-money' customer.id %}">Make transaction, with this user.</a></p>
+</div> 
+
+<div class="links">
+    <p><a href="{% url 'index' %}">Back to index.</a></p>
+</div>

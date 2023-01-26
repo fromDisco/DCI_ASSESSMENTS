@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block contentheader %}
+<h1>Money was send:</h1>
+{% endblock contentheader %}
+{% block contentmain %}
+<p>
+    Send: {{ data.amount.0 }} {{ data.from_country_curr.0 }}
+</p>
+<p>
+    Recieved: {{ data.converted.0 }} {{ data.to_country_curr.0 }}
+</p>
+{% endblock contentmain %}

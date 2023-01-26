@@ -1,0 +1,50 @@
+from app import app, db
+app.app_context().push()
+db.create_all()
+reminder = Reminder(title="Michel", description="probiert rum")
+from app import Reminder
+reminder = Reminder(title="Michel", description="probiert rum")
+db.session.add(reminder)
+reminder
+<Reminder id=None, title='Michel', description='probiert rum'>
+db.session.commit()
+
+db.create_all()
+reminder2 = Reminder(title="Michel2", "probiert rum")
+reminder2 = Reminder(title="Michel2", description="probiert rum")
+db.session.add(reminder2)
+db.commit()
+db.session.commit()
+exit()
+from app import app, Reminder, db
+app.app_context.push()
+app.app_context().push()
+db.create_all()
+reminder2 = Reminder(title="Michel2", description="probiert rum")
+db.session.add(reminder2)
+db.session.commit()
+db.session.commit()
+Reminder.query.all()
+[<Reminder id=1, title='Mirjam is awesome', description='She is learning to code'>, <Reminder id=2, title='Eat', description='Food is healthy'>, <Reminder id=3, title='Exercise', description='Get your heart moving'>, <Reminder id=4, title='wer ich müde bin jetzt', description='ich'>, <Reminder id=6, title='eat', description='sphagetti and Broccoli'>, <Reminder id=7, title='eat', description='sphagetti and Broccoli'>, <Reminder id=8, title='eat', description='sphagetti and Broccoli'>, <Reminder id=9, title='Michel2', description='probiert rum'>]
+Reminder.query.first()
+<Reminder id=1, title='Mirjam is awesome', description='She is learning to code'>
+Reminder.query.filter_by(title="Mirjam").all()
+[]
+Reminder.query.filter_by(title="Mirjam is awesome").all()
+[<Reminder id=1, title='Mirjam is awesome', description='She is learning to code'>]
+Reminder.query.filter_by(title="Mirjam is awesome").all().first()
+Reminder.query.filter_by(title="Mirjam is awesome").first()
+<Reminder id=1, title='Mirjam is awesome', description='She is learning to code'>
+obj = Reminder.query.filter_by(title="Mirjam is awesome").first()
+obj.title
+'Mirjam is awesome'
+obj1 = Reminder.query.get(1)
+obj1
+<Reminder id=1, title='Mirjam is awesome', description='She is learning to code'>
+obj1.id
+obj1.title = "Michel is awsome"
+obj1.title
+'Michel is awsome'
+obj1
+<Reminder id=1, title='Michel is awsome', description='She is learning to code'>
+db.drop_all()

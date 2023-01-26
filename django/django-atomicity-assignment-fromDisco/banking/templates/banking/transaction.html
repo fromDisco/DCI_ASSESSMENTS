@@ -1,0 +1,18 @@
+<h1>Transaction of customer: {{ sender.name }}</h1>
+<p>Your amount of money: {{ sender.amount }}</p>
+
+{% if message %}
+    <p><b>{{ message }}</b></p>
+    <p><b>{{ overdraft }}</b></p>
+{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button>Send money</button>
+</form>
+
+<div class="links">
+    <p><a href="{% url 'index' %}">Back to index.</a></p>
+</div>

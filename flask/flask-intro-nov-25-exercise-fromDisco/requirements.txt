@@ -1,0 +1,6 @@
+Flask
+black
+psycopg2-binary
+ipython
+mock
+pytest

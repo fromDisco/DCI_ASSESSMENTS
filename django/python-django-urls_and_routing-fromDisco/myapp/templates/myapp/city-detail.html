@@ -1,0 +1,14 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    <h2>City Details</h2>
+    {% for key, val in city_data.items %}
+        <p>{{ key }}: {{ val }}</p>
+    {% endfor %}
+    <h2>City weather</h2>
+    {% for key, val in city_weather.items %}
+        <p>
+            {{ key }}: {{ val }}
+        </p>
+    {% endfor %}
+{% endblock content%}
